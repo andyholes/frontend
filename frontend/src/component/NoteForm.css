@@ -1,0 +1,95 @@
+  h1{
+    font-size: 3em;
+  }
+  
+  .note-form {
+    background-color: white;
+    padding: 0 3em;
+    border-radius: 2px;
+    border: solid;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width: 50em;
+    height: 50em;
+  }
+
+  label{
+    margin: 0 2em;
+  }
+
+  .attrib{
+    margin: .5em;
+    width: 100%;
+    resize: none;
+    display: inline;
+    float:right;
+  }
+
+  textarea {
+    border: solid;
+    height: 17em;
+    width: 80%;
+    overflow: auto;
+    resize: none;
+    display: inline;
+    float: right;
+    font-size: large;
+  }
+  
+  .attrib input{
+    padding: .5em;
+    border: solid;
+    width: 78.7%;
+    display: inline;
+    float: right;
+    overflow-y: auto;
+    font-size: medium;
+  }
+
+  .tags-list{
+    border: solid;
+    height: 10em;
+    width: 81%;
+    overflow: auto;
+    display: inline;
+    float: right;
+  }
+
+  .add-tag {
+    width: 82%;
+    height: 2em;
+    display: inline;
+    float: right;
+    position: relative;
+  }
+
+  .new-tag{
+    border: solid;
+    width: 80%;
+    height: 2em;
+  }
+
+  .submit-tag{
+    margin: 1em;
+  }
+
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+  }
+
+  .buttons button{
+    margin-left: 1em;
+    position: relative;
+    left: 34em;
+    top: 12em;
+  }
+
+  p{
+    position: relative;
+    white-space: nowrap;
+    color: orangered;
+    font-size: larger;
+    bottom: -11em;
+  }

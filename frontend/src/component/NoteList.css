@@ -1,0 +1,79 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-title{
+    display: flex;
+  }
+
+  h1{
+    margin: .3em 3%;
+  }
+
+  img{
+    height: 6em;
+  }
+
+  button img{
+    height:1.5em;
+  }
+
+  button{
+    appearance: none;
+    background: none;
+    border: solid;
+    cursor: pointer;
+    font: inherit;
+    box-shadow: #000 5px 5px 0;
+    font-size: large;
+    margin: 0;
+  }
+
+  .action-button{
+    appearance: none;
+    background: none;
+    border: none;
+    margin: 0.4 em;
+    cursor: pointer;
+    font: inherit;
+    text-decoration: underline;
+    box-shadow: none;
+    font-size: large;
+  }
+
+  .toggle-archived{
+    appearance: none;
+    background: none;
+    border: none;
+    margin: 1em 0 0 0;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    font-size: large;
+    color: rgb(66, 66, 156);
+    text-decoration: underline;
+    box-shadow:none
+  }
+
+  .note-list{
+    display: flex;
+    flex-flow:wrap;
+    justify-content: flex-start;
+    margin: 0 2%;
+  }
+
+  .create-button{
+    height: 3em;
+    width: 9em;
+    margin-top: 1.4em;
+    margin-right: 3em;
+  }

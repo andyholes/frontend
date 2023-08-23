@@ -1,0 +1,22 @@
+.tag{
+    display: flex;
+    height: 2.5em;
+    align-items: center;
+}
+
+.tag-icon{
+    height:2em;
+    rotate: -90deg;
+}
+
+.tag h3{
+    white-space: nowrap;
+}
+
+.tag button{
+    box-shadow: none;
+    border: none;
+    height: 1.2em;
+    scale: 100%;
+    padding: 0;
+}
