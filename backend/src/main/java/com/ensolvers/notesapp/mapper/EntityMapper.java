@@ -3,6 +3,7 @@ package com.ensolvers.notesapp.mapper;
 import com.ensolvers.notesapp.model.Note;
 import com.ensolvers.notesapp.model.view.NoteDto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EntityMapper {
@@ -21,7 +22,7 @@ public class EntityMapper {
         return Note.builder()
                 .title(dto.getTitle())
                 .content(dto.getContent())
-                .tags(tagsToLowerCase(dto.getTags()))
+                .tags(normalizeTags(dto.getTags()))
                 .build();
     }
 
@@ -30,13 +31,14 @@ public class EntityMapper {
                 .id(persistedNote.getId())
                 .title(dto.getTitle() != null ? dto.getTitle() : persistedNote.getTitle())
                 .content(dto.getContent() != null ? dto.getContent() : persistedNote.getContent())
-                .tags(tagsToLowerCase(dto.getTags()))
+                .tags(normalizeTags(dto.getTags()))
                 .build();
     }
 
-    private static List<String> tagsToLowerCase(List<String> tags) {
-        return tags.stream()
+    private static List<String> normalizeTags(List<String> tags) {
+        return tags != null ? tags.stream()
+                .distinct()
                 .map(String::toLowerCase)
-                .toList();
+                .toList() : new ArrayList<>();
     }
 }
