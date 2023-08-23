@@ -22,6 +22,7 @@ public class EntityMapper {
         return Note.builder()
                 .title(dto.getTitle())
                 .content(dto.getContent())
+                .archived(dto.isArchived())
                 .tags(normalizeTags(dto.getTags()))
                 .build();
     }
@@ -37,8 +38,9 @@ public class EntityMapper {
 
     private static List<String> normalizeTags(List<String> tags) {
         return tags != null ? tags.stream()
-                .distinct()
                 .map(String::toLowerCase)
+                .map(s -> s.replaceAll(" ", "-"))
+                .distinct()
                 .toList() : new ArrayList<>();
     }
 }
