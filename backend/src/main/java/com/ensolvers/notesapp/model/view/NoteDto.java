@@ -1,5 +1,6 @@
 package com.ensolvers.notesapp.model.view;
 
+import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,7 @@ public class NoteDto {
     private Long id;
     @NotBlank(message = TITLE_NOT_BLANK)
     private String title;
+    @Lob
     private String content;
     private boolean archived;
     private List<String> tags;
