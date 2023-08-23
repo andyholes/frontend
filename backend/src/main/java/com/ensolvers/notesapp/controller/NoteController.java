@@ -2,6 +2,7 @@ package com.ensolvers.notesapp.controller;
 
 import com.ensolvers.notesapp.model.view.NoteDto;
 import com.ensolvers.notesapp.service.NoteService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -40,14 +41,14 @@ public class NoteController {
     }
 
     @PostMapping
-    public ResponseEntity<NoteDto> save(@RequestBody NoteDto dto) {
+    public ResponseEntity<NoteDto> save(@RequestBody @Valid NoteDto dto) {
         NoteDto savedNote = noteService.save(dto);
         log.info("NOTE SAVED SUCCESSFULLY");
         return ResponseEntity.status(HttpStatus.CREATED).body(savedNote);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<NoteDto> update(@PathVariable Long id, @RequestBody NoteDto dto) {
+    public ResponseEntity<NoteDto> update(@PathVariable @Valid Long id, @RequestBody NoteDto dto) {
         NoteDto updatedNote = noteService.update(id, dto);
         log.info("NOTE UPDATED SUCCESSFULLY");
         return ResponseEntity.ok(updatedNote);
