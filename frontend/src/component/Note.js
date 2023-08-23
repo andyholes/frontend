@@ -72,7 +72,7 @@ function Note({note, updateList, updateNote, updateArchived}) {
           <button className='action-button' onClick={handleForm}><img src={editImage} alt="edit icon" /></button>
           <button className='action-button' onClick={handleDelete}><img src={deleteImage} alt="delete icon" /></button>
         </div>
-        
+
         {showForm && 
         <NoteForm note={note}
         onConfirm={confirmForm} 

@@ -84,6 +84,7 @@
     position: relative;
     left: 34em;
     top: 12em;
+    pointer-events: visible;
   }
 
   p{
@@ -92,4 +93,5 @@
     color: orangered;
     font-size: larger;
     bottom: -11em;
+    width: 4em;
   }
