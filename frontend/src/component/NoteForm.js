@@ -69,7 +69,7 @@ function NoteForm ({note, onConfirm, onCancel}){
                 ))}
               </div>
               <div className="add-tag">
-                <input name="new-tag" className="new-tag"/>
+                <input name="new-tag" className="new-tag" placeholder="new-category"/>
                 <button className="submit-tag" type="submit" onClick={addTag}>
                   Add
                 </button>

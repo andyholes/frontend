@@ -32,6 +32,7 @@ public class EntityMapper {
                 .id(persistedNote.getId())
                 .title(dto.getTitle() != null ? dto.getTitle() : persistedNote.getTitle())
                 .content(dto.getContent() != null ? dto.getContent() : persistedNote.getContent())
+                .archived(persistedNote.isArchived())
                 .tags(normalizeTags(dto.getTags()))
                 .build();
     }

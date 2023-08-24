@@ -30,7 +30,6 @@ function Note({note, updateList, updateNote, updateArchived}) {
     };
 
     const confirmForm = (newNote) => {
-        console.log("note: "+newNote);
         axios
           .put(deleteAndPutUrl, newNote)
           .then((response) => {

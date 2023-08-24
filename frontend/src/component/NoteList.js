@@ -52,9 +52,9 @@ function NotesList() {
     };
 
     const updateNote = (newNote) => {
-        console.log("notelist: "+newNote);
         const noteIndex = notes.findIndex((note) => note.id === newNote.id);
         const updatedList = [...notes];
+        updatedList[noteIndex] = newNote;
         setNotes(updatedList);
         console.log("A note has been added to the list");
     };
