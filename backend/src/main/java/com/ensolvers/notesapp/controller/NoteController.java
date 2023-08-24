@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/notes")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RequiredArgsConstructor
 @Slf4j
 public class NoteController {
