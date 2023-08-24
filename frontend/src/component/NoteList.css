@@ -13,14 +13,17 @@
   
   .main-title{
     display: flex;
+    user-select: none;
   }
 
   h1{
     margin: .3em 3%;
+    pointer-events: none;
   }
 
   img{
     height: 6em;
+    pointer-events: none;
   }
 
   button img{
@@ -77,3 +80,36 @@
     margin-top: 1.4em;
     margin-right: 3em;
   }
+
+  label{
+    user-select: none;
+  }
+
+  .filters{
+    margin: .5em 0 1em 1em;
+    display: flex;
+    align-items: center;
+  }
+
+  select{
+    appearance: none;
+    border: solid;
+    border-radius: 0;
+    padding: 5px;
+    margin: 0 1em;
+    font-size: small;
+    width: 15em;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.custom-indicator {
+    position: relative;
+    padding-left: 0.5em;
+    right: 3em;
+    height: 2em;
+    cursor: pointer;
+    border-left: solid;
+    user-select: none;
+    pointer-events: none;
+}

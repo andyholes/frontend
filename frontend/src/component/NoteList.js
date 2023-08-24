@@ -68,9 +68,12 @@ function NotesList() {
 
     const emptyNote = {id:0, title:'', content:'', archived: false, tags:[]}
 
-    const filteredNotes = notes.filter((note) => {
+    
+    const filteredNotes = notes
+    .filter((note) => note.archived === isArchived)
+    .filter((note) => {
         if (selectedTag === "All") {
-            return true; 
+            return true;
         } else {
             return note.tags.includes(selectedTag);
         }
@@ -84,6 +87,9 @@ function NotesList() {
                 <button className="toggle-archived" onClick={showArchived}>{isArchived ?
                     '< Go back to unarchived notes' :
                     'Archived notes'}</button>
+            </div>
+            <div className="filters">
+                <label>Category filter</label>
                 <select
                     onChange={(e) => setSelectedTag(e.target.value)}
                     value={selectedTag}
@@ -96,10 +102,10 @@ function NotesList() {
                         </option>
                     ))}
                 </select>
+                <div className="custom-indicator">▼</div>
             </div>
             <div className="note-list">
                 {filteredNotes
-                    .filter((note) => note.archived === isArchived)
                     .map((note) => (
                         <Note key={note.id}
                             note={note}
@@ -107,7 +113,7 @@ function NotesList() {
                             updateNote={updateNote}
                             updateArchived={updateArchived}/>
                     ))}
-
+                {filteredNotes.lenth === 0 && <p>no hay notas</p>}
                 {showForm &&
                 <NoteForm note={emptyNote}
                           onConfirm={confirmCreation}
