@@ -29,11 +29,11 @@ function Note({note, updateList, updateNote, updateArchived}) {
     };
 
     const confirmForm = (newNote) => {
-        updateNote(newNote);
         axios
           .put(deleteAndPutUrl, newNote)
           .then((response) => {
           console.log("Edited successfully");
+          updateNote(response.data);
           })
           .catch((error) => console.log(error))
           setShowForm(false);
