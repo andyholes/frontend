@@ -8,8 +8,8 @@ function Note({note, updateList, updateNote, updateArchived}) {
   const [showForm, setShowForm] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   
-  const deleteAndPutUrl = `http://localhost:8080/notes/${note.id}`;
-  const archiveUrl = `http://localhost:8080/notes/toggle-archived/${note.id}`;
+  const deleteAndPutUrl = `https://notes-app-qdc5.onrender.com/notes/${note.id}`;
+  const archiveUrl = `https://notes-app-qdc5.onrender.com/notes/toggle-archived/${note.id}`;
 
     const handleForm = () => setShowForm(true);
     const handleDelete = () => setShowDeleteDialog(true);
@@ -18,34 +18,33 @@ function Note({note, updateList, updateNote, updateArchived}) {
     const cancelDelete = () => setShowDeleteDialog(false);
 
     const handleArchive = () => {
-        console.log(note.id);
+        updateArchived(note.id);
         axios
           .post(archiveUrl)
           .then((response) => {
           note.archived ? console.log("Unarchived successfully") :
           console.log("Archived successfully");
-          updateArchived(note.id);
           })
           .catch((error) => console.log(error))
     };
 
     const confirmForm = (newNote) => {
+        updateNote(newNote);
         axios
           .put(deleteAndPutUrl, newNote)
           .then((response) => {
           console.log("Edited successfully");
-          updateNote(response.data);
           })
           .catch((error) => console.log(error))
           setShowForm(false);
     };
 
     const confirmDelete = () => {
+        updateList(note.id);
         axios
         .delete(deleteAndPutUrl)
         .then((response) => {
         console.log("Deleted successfully");
-        updateList(note.id);
         })
         .catch((error) => console.log(error))
         setShowDeleteDialog(false);
