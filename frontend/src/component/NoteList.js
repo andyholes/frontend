@@ -28,11 +28,11 @@ function NotesList() {
     };
 
     const confirmCreation = (newNote) => {
-        addToList(newNote);
         axios
         .post(baseUrl, newNote)
         .then((response) => {
             console.log("Created successfully");
+            addToList(response.data);
         })
         .catch((error) => console.log(error))
         setShowForm(false);
