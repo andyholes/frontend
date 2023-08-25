@@ -10,7 +10,7 @@ function NotesList() {
     const [showForm, setShowForm] = useState(false);
     const [selectedTag, setSelectedTag] = useState("All"); // Default to showing all notes
 
-    const baseUrl = `http://localhost:8080/notes`;
+    const baseUrl = `https://notes-app-qdc5.onrender.com/notes`;
 
     useEffect(() => {
         axios
@@ -28,11 +28,11 @@ function NotesList() {
     };
 
     const confirmCreation = (newNote) => {
+        addToList(newNote);
         axios
         .post(baseUrl, newNote)
         .then((response) => {
             console.log("Created successfully");
-            addToList(response.data);
         })
         .catch((error) => console.log(error))
         setShowForm(false);
