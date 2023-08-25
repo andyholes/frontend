@@ -39,3 +39,7 @@ Before you can run the "My Notes App," please ensure that you have the following
     ```bash
     ./start-app.sh
 
+## Documentation
+
+You can access Swagger to get a list of the available endpoints exposed by the API.
+To do so, once the project is nice and running, visit [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
