@@ -93,7 +93,7 @@ function formatDate(inputDate) {
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
   ];
 
-  const day = date.getDate();
+  const day = date.getDate()+1;
   const month = date.getMonth();
   const year = date.getFullYear();
   const formattedDate = `${day}/${months[month]}/${year}`;
